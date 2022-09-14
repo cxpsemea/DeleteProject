@@ -1,23 +1,26 @@
 Param(
+    [Parameter(Mandatory = $true)][string]$CxServer,
+    [Parameter(Mandatory = $true)][string]$CxUser,
+    [Parameter(Mandatory = $true)][string]$CxPass,
     [Parameter(Mandatory = $true)][string]$projectName,
     [Parameter()][string]$cxSourceRoot = "D:\CxSrc",
     [Parameter()][string]$logFilename = "DeleteProject.log",
     [Switch]$CxDebug = $false,
     [Switch]$CxDelSrcDir = $false,
-    [Switch]$ContinueOnError = $false,
+    [Switch]$ContinueOnDelSrcDirError = $false,
     [Switch]$DryRun = $false
 )
 
 
-if ($ContinueOnError) {
+if ($ContinueOnDelSrcDirError) {
     $errorAction = "Continue"
 } else {
     $errorAction = "Stop"
 }
 
-$server = "xxxxxxx" ### CHANGE ME
-$cxUsername = "xxxxxxx" ### CHANGE ME
-$cxPassword = "xxxxxxx" ### CHANGE ME
+$server = $CxServer
+$cxUsername = $CxUser
+$cxPassword = $CxPass
 
 
 
