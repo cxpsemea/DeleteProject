@@ -26,11 +26,13 @@ Password of CxSAST user
 Root directory of scans's source code (defaults to D:\CxSrc)
 
 #### -CxDelSrcDir
-By default, the script WILL NOT delete the scans' source code directory. 
+By default, `the script WILL NOT delete the scans` source code directory.
+
 If set, scans' source code directory will be removed.
 
 #### -ContinueOnDelSrcDirError
 By default, the script will stop in case of an error deleting the scan surce code directory.
+
 If set, the script will continue processing the scans of the project (deleting every scan in CxSAST and removing the source code from the filesystem)
 
 #### -DryRun
