@@ -1,7 +1,7 @@
 # DeleteProject
 Powershell script to delete a project in CxSAST and all it's related data.
 
-Previous to delete a project, find all the scans, delete every scan in CxSAST and removes the stored source code (in the files system) for every removed scan.
+Previous to delete a project, the script finds all the scans, delete every scan in CxSAST and removes the stored source code (in the files system) for every removed scan.
 After that, the project itself is removed from CxSAST.
 
 ## Usage 
