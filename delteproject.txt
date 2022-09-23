@@ -1,0 +1,33 @@
+
+
+
+
+Requirements:
+
+Given a project name, to eliminate all the information regarding that project, i.e. project settings, scans, results and source code.
+
+Limitations:
+
+The CxSAST approach to delete projects and scans is to mark both entities as "deprecated" into the database, i.e. CxSAST does not delete physically the records from the db just mark them as "deprecated".
+
+Data Retention functionality physically deletes the records from the database, but such functionality cannot be used because it cannot be invoked on a project basis, i.e. it executes the defined data retention policy for all the projects, not just for one. Besides, data retention works by maintaining a certain ammount of succesful scans and that minimum number cannot be less than 1. This makes data retention funcctionality not suitable to be used in the required scenario.
+
+A sql script to manually delete the records from the data base is disencouraged because it may produce data integrity corruption.
+
+Technical approach:
+
+By using the REST API call to delete a project, all the information related to the project will be marked as "deprecated", not being able to see it within the User Interface. 
+
+Regarding the source code of the project's scans, a script can be developed to recover the file system source path for every scan and, afterwards, to delete the source code from the file system. 
+
+
+Effort:
+
+2-3 days to setup the test environment, developing and testing the script.
+
+ETA:
+
+ETA pending from approbation by the customer.
+
+
+
